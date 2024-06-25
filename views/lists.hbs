@@ -1,0 +1,31 @@
+{{#if lists}}
+<h2>
+    List of spending lists:
+</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Month</th>
+        <th></th>
+    </tr>
+    {{#each lists}}
+    <tr>
+        <td>
+            {{name}}
+        </td>
+        <td>
+            {{month}}
+        </td>
+        <td>
+            <a href="/lists/{{name}}">View List</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+{{else}}
+<h2>
+    No current lists
+</h2>
+{{/if}}
+
+<a href="/addList">Add A New Spending List</a>

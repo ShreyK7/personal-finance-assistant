@@ -1,0 +1,18 @@
+{{#if error}}
+<div class="error">{{ error }}</div>
+{{/if}}
+
+<form method="POST", action="/addList">
+    <div>
+        <label for="name">Name of spending list:</label>
+        <input type="text" name="name" placeholder="Enter the name of a list you want to create">
+    </div>
+    <div>
+        <label for="month">Month of spending list:</label>
+        <input type="text" name="month" placeholder="Enter the month of the transactions in this list">
+    </div>
+
+    <div>
+        <input type="submit" value="Add List">
+    </div>
+</form>

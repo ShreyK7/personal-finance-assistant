@@ -1,0 +1,71 @@
+{{#if List}}
+<h2>
+    Current List: {{List}}
+
+
+
+</h2>
+{{/if}}
+
+{{#if transactions}}
+<h3>
+    Items in list:
+</h3>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th></th>
+    </tr>
+    {{#each transactions}}
+    <tr>
+        <td>{{name}}</td>
+        <td>${{price}}</td>
+        <td>{{date}}</td>
+        <td>
+            <div>
+                <input type="text" name="item" placeholder="item name" required>
+            </div>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+{{else}}
+<h3>
+   No items in list!
+</h3>
+{{/if}}
+
+{{#if addedItem}}
+
+
+
+    {{addedItem}}
+{{/if}}
+
+<div>
+    <a href="/lists/{{List}}/remove">Remove items</a>
+</div>
+
+<h2>
+    Add new item to list:
+</h2>
+
+<form method="POST", action="/lists/{{List}}">
+    <div>
+        <label for="item">Name of item:</label>
+        <input type="text" name="item" placeholder="item name" required>
+    </div>
+    <div>
+        <label for="price">Price of item:</label>
+        <input type="number" name="price" placeholder="item price" step="0.01" min="0" required>
+    </div>
+    <div>
+        <label for="date">Date item was purchased:</label>
+        <input type="date" name="date" placeholder="date purchased">
+    </div>
+    <div>
+        <input type="submit" value="Add Item to List">
+    </div>
+</form>

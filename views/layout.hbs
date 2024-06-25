@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <a href="/">
+            <h1>
+                Dollar Scholar
+            </h1>
+        </a>
+        <h2>
+            {{#if user}}
+            Logged in as: {{user.username}}
+            {{/if}}
+        </h2>
+    </header>
+    {{{body}}}
+</body>
+</html>

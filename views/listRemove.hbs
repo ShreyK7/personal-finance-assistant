@@ -1,0 +1,25 @@
+<h2>Remove an item from {{List}} spending list:</h2>
+
+<form method="POST", action="/lists/{{List}}/remove">
+    <div>
+        <label for="item">Item to be removed, capitalization matters: </label>
+        <input type="text" name="item" placeholder="item name" required>
+    </div>
+    <div>
+        <label for="price">Price of item to be removed, be exact: </label>
+        <input type="number" name="price" placeholder="item price" step="0.01" min="0" required>
+    </div>
+    <div>
+        <input type="submit" value="Remove Item">
+    </div>
+</form>
+
+{{#if Msg}}
+
+
+{{Msg}}
+{{/if}}
+
+<a href="/lists/{{List}}">
+    Go back
+</a>
